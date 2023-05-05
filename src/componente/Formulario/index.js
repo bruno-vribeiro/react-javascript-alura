@@ -10,15 +10,6 @@ const Formulario = (props)=>{
     const [imagem, setImagem] = useState('')
     const [time, setTime] = useState('')
 
-    const times = [
-        'Programação',
-        'Front-End',
-        'Data Science',
-        'Devops',
-        'UX e Design',
-        'Mobile',
-        ' Inovação e Gestão'
-        ]
     const aoSalvar = (evento)=>{
         evento.preventDefault()
 
@@ -37,7 +28,7 @@ const Formulario = (props)=>{
             <CampoTexto valor={nome} aoAlterado={valor => setNome(valor)} obrigatorio={true} label='Nome' placeholder='Digite seu nome'/>
               <CampoTexto valor={cargo} aoAlterado={valor => setCargo(valor)} obrigatorio={true} label='Cargo' placeholder='Digite seu cargo'/>
               <CampoTexto valor={imagem} aoAlterado={valor => setImagem(valor)} label='Imagem' placeholder='Digite o endereço da imagem'/>
-              <ListaSuspensa valor={time} aoAlterado={valor=>setTime(valor)} obrigatorio={true} label="Times" itens={times}/>
+              <ListaSuspensa valor={time} aoAlterado={valor=>setTime(valor)} obrigatorio={true} label="Times" itens={props.times}/>
               <Botao>
                 Criar card
               </Botao>

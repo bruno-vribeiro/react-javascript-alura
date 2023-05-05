@@ -1,0 +1,17 @@
+.times{
+    text-align:center;
+    padding: 32px;
+    
+}
+
+.times h3{
+    color: #212121;
+    font-family: 'Prata';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 43px;
+    border-bottom:4px solid;
+    display: inline-block;
+    padding-bottom: 8px
+}

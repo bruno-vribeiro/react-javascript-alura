@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Banner from './componente/Banner'
 import Formulario from './componente/Formulario';
+import Times from './componente/Times';
 
 function App() {
   const [colaboradores, setColaboradores]= useState([])
@@ -12,10 +13,46 @@ function App() {
     console.log(colaboradores)
     
   }
+  const times = [
+    {
+      nome: 'Front-End',
+      corPrimaria: '#82CFFA',
+      corSecundaria: '#E8F8FF'
+  },
+  {
+      nome: 'Data Sciense',
+      corPrimaria: '#A6D157',
+      corSecundaria: '#F0F8E2'
+  },
+  {
+      nome: 'Devops',
+      corPrimaria: '#E06B69',
+      corSecundaria: '#FDE7E8'
+  },
+  {
+      nome: 'UX e Design',
+      corPrimaria: '#D86EBF',
+      corSecundaria: '#FAE5F5'
+  },
+  {
+      nome: 'Mobile',
+      corPrimaria: '#FEBA05',
+      corSecundaria: '#FFF5D9'
+  },
+  {
+      nome: 'Inovação e Gestão',
+      corPrimaria: '#FF8A29',
+      corSecundaria: '#FFEEDF',
+  }
+]
+
+
   return (
     <div className="App">
       <Banner />
-      <Formulario colaborador={novoColaborador}/>
+      <Formulario times={times.map(times=>times.nome)} colaborador={novoColaborador}/>
+      {times.map(times=><Times key={times.nome} corPrimaria={times.corPrimaria} nomes={times.nome} corSecundaria={times.corSecundaria} />)}
+      
     </div>
   );
 }
